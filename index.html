@@ -57,7 +57,7 @@ body{background:var(--bg);color:var(--white);font-family:var(--body);min-height:
 .view.active{display:flex;}
 
 /* ── AUTH LAYOUT ── */
-#view-auth{
+#view-login, #view-register, #view-forgot {
   align-items:center;justify-content:center;
   background:radial-gradient(ellipse at 60% 0%, rgba(245,166,35,0.06) 0%, transparent 60%),
              radial-gradient(ellipse at 10% 100%, rgba(245,166,35,0.04) 0%, transparent 50%),
@@ -350,32 +350,30 @@ body{background:var(--bg);color:var(--white);font-family:var(--body);min-height:
      VIEW: LOGIN
 ══════════════════════════════════════ -->
 <div id="view-login" class="view">
-  <div id="view-auth" class="view active" style="min-height:100vh;width:100%;">
-    <div class="auth-card">
-      <a href="https://assentagencia.com.br" class="auth-logo">ASSENT <span>AGÊNCIA</span></a>
-      <h2 class="auth-title">Bem-vindo de volta</h2>
-      <p class="auth-sub">Acesse sua área de membros</p>
+  <div class="auth-card">
+    <a href="https://assentagencia.com.br" class="auth-logo">ASSENT <span>AGÊNCIA</span></a>
+    <h2 class="auth-title">Bem-vindo de volta</h2>
+    <p class="auth-sub">Acesse sua área de membros</p>
 
-      <div id="login-alert" class="alert alert-error">
-        <span class="alert-icon">⚠</span>
-        <span id="login-alert-msg"></span>
-      </div>
+    <div id="login-alert" class="alert alert-error">
+      <span class="alert-icon">⚠</span>
+      <span id="login-alert-msg"></span>
+    </div>
 
-      <div class="form-group">
-        <label class="form-label">E-mail</label>
-        <input type="email" id="login-email" class="form-input" placeholder="seu@email.com" autocomplete="email"/>
-      </div>
-      <div class="form-group">
-        <label class="form-label">Senha</label>
-        <input type="password" id="login-password" class="form-input" placeholder="••••••••" autocomplete="current-password"/>
-      </div>
-      <a href="#" class="forgot-link" onclick="showView('forgot')">Esqueci minha senha</a>
+    <div class="form-group">
+      <label class="form-label">E-mail</label>
+      <input type="email" id="login-email" class="form-input" placeholder="seu@email.com" autocomplete="email"/>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Senha</label>
+      <input type="password" id="login-password" class="form-input" placeholder="••••••••" autocomplete="current-password"/>
+    </div>
+    <a href="#" class="forgot-link" onclick="showView('forgot')">Esqueci minha senha</a>
 
-      <button class="btn btn-primary" id="btn-login" onclick="doLogin()">Entrar na minha conta</button>
+    <button class="btn btn-primary" id="btn-login" onclick="doLogin()">Entrar na minha conta</button>
 
-      <div class="auth-switch">
-        Ainda não tem conta? <a href="#" onclick="showView('register')">Cadastre-se grátis</a>
-      </div>
+    <div class="auth-switch">
+      Ainda não tem conta? <a href="#" onclick="showView('register')">Cadastre-se grátis</a>
     </div>
   </div>
 </div>
@@ -384,9 +382,7 @@ body{background:var(--bg);color:var(--white);font-family:var(--body);min-height:
      VIEW: REGISTER
 ══════════════════════════════════════ -->
 <div id="view-register" class="view">
-  <div style="min-height:100vh;width:100%;display:flex;align-items:center;justify-content:center;padding:24px;
-    background:radial-gradient(ellipse at 40% 0%, rgba(245,166,35,0.06) 0%, transparent 60%), var(--bg);">
-    <div class="auth-card">
+  <div class="auth-card">
       <a href="https://assentagencia.com.br" class="auth-logo">ASSENT <span>AGÊNCIA</span></a>
       <h2 class="auth-title">Criar conta</h2>
       <p class="auth-sub">Preencha os dados abaixo para se cadastrar</p>
@@ -426,7 +422,6 @@ body{background:var(--bg);color:var(--white);font-family:var(--body);min-height:
       <div class="auth-switch">
         Já tem conta? <a href="#" onclick="showView('login')">Entrar</a>
       </div>
-    </div>
   </div>
 </div>
 
@@ -434,12 +429,10 @@ body{background:var(--bg);color:var(--white);font-family:var(--body);min-height:
      VIEW: FORGOT PASSWORD
 ══════════════════════════════════════ -->
 <div id="view-forgot" class="view">
-  <div style="min-height:100vh;width:100%;display:flex;align-items:center;justify-content:center;padding:24px;
-    background:radial-gradient(ellipse at 50% 0%, rgba(245,166,35,0.05) 0%, transparent 60%), var(--bg);">
-    <div class="auth-card">
-      <a href="https://assentagencia.com.br" class="auth-logo">ASSENT <span>AGÊNCIA</span></a>
-      <h2 class="auth-title">Recuperar senha</h2>
-      <p class="auth-sub">Enviaremos um link de redefinição para o seu e-mail</p>
+  <div class="auth-card">
+    <a href="https://assentagencia.com.br" class="auth-logo">ASSENT <span>AGÊNCIA</span></a>
+    <h2 class="auth-title">Recuperar senha</h2>
+    <p class="auth-sub">Enviaremos um link de redefinição para o seu e-mail</p>
 
       <div id="forgot-alert" class="alert alert-error">
         <span class="alert-icon">⚠</span>
@@ -460,7 +453,6 @@ body{background:var(--bg);color:var(--white);font-family:var(--body);min-height:
       <div class="auth-switch" style="margin-top:20px;">
         <a href="#" onclick="showView('login')">← Voltar para o login</a>
       </div>
-    </div>
   </div>
 </div>
 
